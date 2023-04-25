@@ -1,3 +1,218 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Google Font Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@layer base {
+    body, html {
+        @apply  font-Poppins text-[15px] !transition-all !ease-linear !duration-[0.4s];
+    }
+
+    html::-webkit-scrollbar {
+        @apply  w-4;
+    }
+
+    html::-webkit-scrollbar-track {
+        @apply  bg-white;
+    }
+
+    html::-webkit-scrollbar-thumb {
+        @apply  bg-primary--color__text rounded-md;
+    }
+}
+
+@layer components {
+
+    article, footer {
+        @apply  px-[26px] 
+                sm:px-[2.5rem] 
+                md:px-[4rem] 
+                lg:px-[2.5rem]
+                xl:px-[9.5rem];
+    }
+
+    .heading__1 {
+        @apply  text-[38px] font-medium capitalize mt-2 mb-4 tracking-wider animate-fadeUp animation-delay-200
+                sm:text-[40px]
+                md:text-[48px] md:mt-3 md:mb-5
+                lg:text-[60px] lg:mt-4 lg:mb-6;
+    }
+
+    .heading__2 {
+        @apply  font-medium text-[32px] capitalize
+                sm:text-[38px]
+                md:text-[44px]
+                lg:text-[48px];
+    }
+
+    .heading__4 {
+        @apply  font-semibold font-Poppins text-[14px] text-black uppercase tracking-wider mb-5; 
+    }
+
+    .btn {
+        @apply  cursor-pointer inline-block uppercase font-medium tracking-widest transition-all ease-linear duration-300;
+    }
+
+    .btn--primary {
+        @apply  py-3 px-5 rounded-md whitespace-nowrap bg-inherit text-black border-2 border-black hover:text-[#ec555b]
+                hover:border-[#ec555b] hover:shadow-md hover:shadow-[#ec555b]
+                md:py-5 md:px-8;
+    }
+}
+
+/* CSS style custom */
+@layer utilities {
+
+    /* CSS Header */
+    .header {
+        @apply  px-[1.5rem] flex items-center justify-between bg-primary--color__bg pt-12 pb-6
+                xs:px-[2rem] sm:px-[5rem] lg:px-[2.5rem] xl:px-[9.5rem];
+    }
+
+    .menu-navigation {
+        @apply  basis-[65%] text-lg capitalize font-medium tracking-widest block transition-all ease-linear duration-500 opacity-20 invisible
+                fixed top-0 left-[-105%] min-w-[50%] h-screen bg-white shadow-xl shadow-gray-400 p-6 space-y-4 overflow-y-auto
+                lg:static lg:w-full lg:flex lg:h-[50px] lg:bg-inherit lg:shadow-none z-[999] lg:p-0 lg:space-y-0 lg:items-center 
+                lg:justify-end lg:gap-x-9 xl:gap-x-10 lg:opacity-100 lg:visible lg:overflow-y-visible
+    }
+
+    .menu-navigation.active-clicked {
+        @apply  left-0 opacity-100 visible transition-all ease-linear duration-500;
+    }
+
+    #bg-sub.active {
+        @apply  opacity-100 visible transition-all ease-linear duration-300;
+    }
+
+    .menu-navigation .nav__link--item .icon--down {
+        @apply  inline-block w-3 h-3 relative ml-1 transition-all ease-linear duration-300 
+
+        before:absolute before:content-[''] before:box-border before:left-1/2 before:top-1/2 before:bg-[#777777] before:h-[2px] 
+        before:w-full before:transform before:-translate-x-1/2 before:-translate-y-1/2
+
+        after:absolute after:content-[''] after:box-border after:left-1/2 after:top-1/2 after:bg-[#777777] after:h-[2px] 
+        after:w-full after:transform after:-translate-x-1/2 after:-translate-y-1/2 after:rotate-90 after:transition-all after:ease-linear after:duration-300;
+    }
+    
+    .menu-navigation .nav__link:hover > .nav__link--item > .icon--down::before,
+    .menu-navigation .nav__link:hover > .nav__link--item > .icon--down::after {
+        @apply  bg-[#1d1d1d];
+    }
+
+    .menu-navigation .nav__link > .nav__link--item.active > .icon--down::after {
+        @apply  rotate-0 transition-all ease-linear duration-300;
+    }
+
+    .nav__link {
+        @apply  border-b py-2.5 border-gray-400
+                last:border-b-0 
+                lg:border-none;
+    }
+       
+    .nav__link--item {
+        @apply  flex justify-between text-[#5d5d5d] h-10 
+                hover:text-[#1d1d1d]
+                lg:relative lg:py-0 lg:pb-1 lg:px-1 lg:h-full lg:items-center;
+    }
+
+    .dropdown-menu {
+        @apply  relative top-auto z-[999] left-auto bg-white  min-w-full rounded transition-all ease-linear 
+                duration-300 opacity-0 invisible max-h-0 overflow-hidden
+                
+                lg:absolute lg:top-[100%] lg:opacity-0 lg:invisible lg:border-t-4 lg:shadow-lg lg:border-primary--color__text
+                lg:transform lg:translate-y-5 lg:left-0 lg:max-h-max lg:overflow-visible
+    }
+
+    .nav__link--item.active ~ .dropdown-menu {
+        @apply  opacity-100 visible max-h-max overflow-visible transition-all ease-linear duration-300
+                lg:translate-y-0 lg:opacity-100 lg:visible;
+    }
+    
+    .dropdown-menu__link--item {
+        @apply  pl-6 pr-28 w-full py-4 capitalize whitespace-nowrap block 
+                transition-all ease-linear duration-300 relative
+                hover:bg-primary--color__text/20
+    }
+
+    .dropdown-menu__link--item.active {
+        @apply  bg-primary--color__text;
+    }
+
+
+    form.default__search-form {
+        @apply  relative hidden 
+                lg:block;
+    }
+
+    form#mobile-search-form.default__search-form {
+        @apply  block w-full;
+    }
+
+
+    .list-category__item--img {
+        transform: scale3d(1, 1, 1);
+    }
+
+    .post-item__image {
+        @apply  w-full h-full object-cover transition-all ease-linear duration-300 transform group-hover:scale-110
+    }
+
+    #filter-buttons .btn-clicked {
+        @apply  relative text-primary--color__text transition-all ease-linear duration-300 
+                after:absolute after:-bottom-5 after:left-1/2 after:-translate-y-1/2 
+                after:border-r-[3px] after:border-b-[3px] after:border-primary--color__text after:inline-block 
+                after:p-[5px] after:transform after:rotate-45
+                after:md:-bottom-7;
+    }
+
+    .product-list .product-item.hide {
+        @apply  hidden;
+    }
+
+    .product-list .product-item.active {
+        @apply  animate-fadeLeft;
+    }
+
+    .slide-item {
+        @apply  flex flex-col items-center justify-between px-[1.5rem]
+                sm:px-[2rem]
+                xs:flex-row 
+                lg:px-[2.5rem] 
+                xl:px-[9.5rem];
+    }
+
+    article.slider .swiper-button-next,
+    article.slider .swiper-button-prev {
+        @apply  border-2 w-[38px] h-[38px] border-black rounded-full bg-inherit transition-all ease-linear duration-300 
+                hover:bg-black
+                md:w-[44px] md:h-[44px]
+                lg:w-[52px] lg:h-[52px];    
+    }
+
+    article.slider .swiper-button-next {
+        @apply  right-5
+                md:right-9
+                lg:right-12;
+    }
+
+    article.slider .swiper-button-prev {
+        @apply  left-5
+                md:left-9
+                lg:left-12;   
+    }
+
+    article.slider .swiper-button-next::after,
+    article.slider .swiper-button-prev::after {
+        @apply  text-[18px] text-black transition-all ease-linear duration-300 hover:text-white
+                md:text-[20px]
+                lg:text-[24px];    
+    }
+
+    article.slider .swiper-pagination-bullet {
+        @apply  bg-black w-3 h-3 !mb-4;
+    } 
+
+    
+}
