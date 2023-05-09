@@ -2,7 +2,9 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    content: ["./public/**/*.{html,js}"],
+    content: [
+        "./public/**/*.{html,js}",
+    ],
     mode: 'jit',
     theme: {
         screens: {
@@ -26,13 +28,13 @@ module.exports = {
             },
             keyframes: {
                 fadeLeft : {
-                    '0%': { transform: 'translateX(5rem)' },
+                    '0%': { transform: 'translateX(5rem)', opacity: 0 },
                 },
                 fadeUp: {
                     '0%': { transform: 'translateY(5rem)', opacity: 0 }
                 },
                 zoomIn: {
-                    '0%': { transform: 'scale(0.4)', opacity: 0.4 },
+                    '0%': { transform: 'scale(0.4)', opacity: 0 },
                     '100%': { transform: 'scale(1)', opacity: 1 }
                 }
             },
@@ -44,10 +46,16 @@ module.exports = {
             aspectRatio: {
                 '1/1': '1 / 1',
                 '4/5': '4 / 5',
+                '8/9': '8 / 9',
+                '9/10': '9 / 10',
                 '9/11': '9 / 11',
                 '16/9': '16 / 9',
                 '39/59': '39 / 59',
+                '39/56': '39 / 56',
             },
+            backgroundImage: {
+                'about-bg': "url('/images/video-bg.svg')",
+            }
         },
     },
     plugins: [

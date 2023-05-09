@@ -37,7 +37,7 @@
         @apply  text-[38px] font-medium capitalize mt-2 mb-4 tracking-wider animate-fadeUp animation-delay-200
                 sm:text-[40px]
                 md:text-[48px] md:mt-3 md:mb-5
-                lg:text-[60px] lg:mt-4 lg:mb-6;
+                lg:text-[50px] lg:mt-4 lg:mb-6;
     }
 
     .heading__2 {
@@ -60,6 +60,15 @@
                 hover:border-[#ec555b] hover:shadow-md hover:shadow-[#ec555b]
                 md:py-5 md:px-8;
     }
+
+    .btn--discover-more,
+    .btn--shop-now {
+        @apply  text-[12px] font-semibold border-none px-0 py-0 text-gray-600 relative
+                after:absolute after:-bottom-1 after:left-0 after:w-full after:h-px after:bg-gray-950 after:transition-all after:ease-linear after:duration-500
+                hover:after:bg-red-500 hover:after:w-0 hover:after:transition-all hover:after:ease-linear hover:after:duration-500
+                before:absolute before:-top-2 before:left-0 before:w-0 before:h-[1.5px] before:bg-red-500 before:transition-all before:ease-linear before:duration-500
+                hover:before:w-full hover:before:transition-all hover:before:ease-linear hover:before:duration-500;
+    }
 }
 
 /* CSS style custom */
@@ -68,7 +77,7 @@
     /* CSS Header */
     .header {
         @apply  px-[1.5rem] flex items-center justify-between bg-primary--color__bg pt-12 pb-6
-                xs:px-[2rem] sm:px-[5rem] lg:px-[2.5rem] xl:px-[9.5rem];
+                xs:px-[2rem] sm:px-[5rem] lg:px-[2.5rem] xl:px-[6.5rem];
     }
 
     .menu-navigation {
@@ -192,13 +201,13 @@
     }
 
     article.slider .swiper-button-next {
-        @apply  right-5
+        @apply  right-4
                 md:right-9
                 lg:right-12;
     }
 
     article.slider .swiper-button-prev {
-        @apply  left-5
+        @apply  left-4
                 md:left-9
                 lg:left-12;   
     }
@@ -214,5 +223,119 @@
         @apply  bg-black w-3 h-3 !mb-4;
     } 
 
-    
+    /*  CSS Home Page 2 */
+    .testimonials-slider .swiper-button-next,
+    .testimonials-slider .swiper-button-prev {
+        @apply  border-2 border-gray-300 w-8 h-8 rounded-full flex items-center justify-center top-[91%] transition-all 
+                ease-linear duration-300 hover:border-black
+                md:w-9 md:h-9
+                xl:w-10 xl:h-10;
+    }
+
+    .testimonials-slider .swiper-button-prev {
+        @apply  left-[76%]
+                xs:left-[85%] 
+                md:left-[86%] 
+                lg:left-[88%]
+                xl:left-[92%];
+    }
+
+    .testimonials-slider .swiper-button-next:after,
+    .testimonials-slider .swiper-button-prev:after {
+        @apply  text-[16px] text-gray-400 transition-all ease-linear duration-300 hover:text-black 
+                xl:text-[18px];
+    }
+
+    .testimonials-slider .swiper-button-next:after {
+        @apply  content-['\27A4'] 
+    }
+
+    .testimonials-slider .swiper-button-prev:after {
+        @apply  content-['\27A4'] transform rotate-180
+    }
+
+    .products .products-wrapper #filter-btn-product-2 button.btn--filter-product-category {
+        @apply  relative transition-all ease-linear duration-[0.4s] px-1 cursor-pointer hover:text-black
+                after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-1 after:bg-black
+                hover:after:w-full hover:after:transition-all hover:after:ease-linear hover:after:duration-[0.4s];
+    }
+
+    #filter-btn-product-2 button.btn--filter-product-category.btn-clicked {
+        @apply  text-black;
+    }
+
+    .products .products-wrapper .product-list-2 .product-item.active {
+        @apply  animate-fadeLeft;
+    }
+
+    .products .products-wrapper .product-list-2 .product-item.hide {
+        @apply  hidden;
+    }
+
+    .banner .banner-wrapper {
+        @apply  relative w-[100vw] left-[calc(-50vw_+_50%)] grid grid-cols-1 gap-y-5 my-5 px-4
+                xs:px-8
+                sm:grid-cols-2 sm:px-4 sm:gap-x-5
+                lg:grid-cols-3 lg:my-6 lg:px-0
+                xl:my-8;
+    }
+
+    /*  -------------- CSS Shop Page ------------------------- */
+    .select-menu.active .select-options {
+        @apply  block;
+    }
+
+    .select-menu.active .select-btn svg {
+        @apply  transform rotate-180 transition-all ease-linear duration-300;
+    }
+
+    .option.selected {
+        @apply  bg-primary--color__text text-white;
+    }
+
+    #btn-show-product-list button.active {
+        @apply  bg-primary--color__text text-white
+    }
+
+    .product-list__grid--view.active {
+        @apply  grid animate-fadeUp;
+    }
+
+    .product-list__list--view.active {
+        @apply  block animate-fadeLeft;
+    }
+
+    .carts-wrapper.show {
+        @apply  visible opacity-100 right-0 transition-all ease-in-out duration-300;
+    }
+
+    .cart-bg.show {
+        @apply  visible opacity-100 transition-all ease-in-out duration-300;
+    }
+
+
+    /*  -------------- CSS Product-Detail Page ------------------------- */
+    .lb-nav a.lb-next {
+        @apply  !bg-[url('/images/icons/icon-next.png')] w-20 bg-contain;
+    }
+
+    .lb-nav a.lb-prev {
+        @apply  !bg-[url('/images/icons/icon-prev.png')] w-20 bg-contain;
+    }
+
+    .lb-data .lb-close {
+        @apply  !bg-[url('/images/icons/icon-close.png')] absolute z-30 top-[3%] text-right right-[34%] w-5 bg-contain;
+    }
+
+    .tab__content .content {
+        @apply  hidden animate-fadeLeft;
+    }
+
+    .tab__content .content.active {
+        @apply  block;
+    }
+
+    .tab__btn.active {
+        @apply  text-primary--color__text transition-all ease-linear duration-300;
+    }
 }

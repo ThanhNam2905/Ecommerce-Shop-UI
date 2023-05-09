@@ -1,12 +1,642 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page 2</title>
+    <!-- Use Swiper link css from CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="./css/output.css" type="text/css">
 </head>
+
 <body>
-    <p>Home Page 2</p>
+    <div class="root">
+        <div class="content-wrapper max-w-1880 mx-auto bg-white overflow-hidden relative !font-Poppins">
+            <header class="header absolute left-0 top-10 w-[100vw] z-[9999] !bg-transparent !pt-0 !pb-0">
+                <a href="index.html" class="logo w-[92px] h-[40px]">
+                    <img src="./images/logo-shop.png" alt="Logo Shop" class="w-full h-full object-cover">
+                </a>
+                <nav class="flex items-center gap-10 xl:gap-16">
+                    <ul class="menu-navigation">
+                        <div class="flex flex-col items-center gap-y-6 mb-6 lg:hidden">
+                            <a href="index.html" class="logo">
+                                <img src="./images/logo-shop.png" alt="Logo Shop" class="object-cover">
+                            </a>
+                            <form action="" id="mobile-search-form" class="default__search-form">
+                                <input type="text" name="" id="" placeholder="Search..."
+                                    class="w-[100%] border border-[#cccccc] py-[10px] pl-6 pr-[51px] rounded-full focus:ring-1 focus:outline-none">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor"
+                                    class="w-5 h-5 absolute top-1/2 right-4 transform -translate-y-1/2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                                </svg>
+                            </form>
+                        </div>
+                        <li class="nav__link relative">
+                            <p class="nav__link--item flex items-center cursor-pointer">
+                                Home
+                                <i class="icon--down"></i>
+                            </p>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="index.html" class="dropdown-menu__link--item">Home Page 1</a>
+                                </li>
+                                <li>
+                                    <a href="index-2.html" class="dropdown-menu__link--item">Home Page 2</a>
+                                </li>
+                                <li>
+                                    <a href="index-3.html" class="dropdown-menu__link--item">Home Page 3</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav__link relative">
+                            <a href="about.html" class="nav__link--item">About</a>
+                        </li>
+                        <li class="nav__link relative">
+                            <a href="shop.html" class="nav__link--item">Shop</a>
+                        </li>
+                        <li class="nav__link relative">
+                            <p class="nav__link--item flex items-center cursor-pointer">
+                                Page
+                                <i class="icon--down"></i>
+                            </p>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="blog.html" class="dropdown-menu__link--item">Blog</a>
+                                </li>
+                                <li>
+                                    <a href="login.html" class="dropdown-menu__link--item">Login</a>
+                                </li>
+                                <li>
+                                    <a href="signup.html" class="dropdown-menu__link--item">Sign up</a>
+                                </li>
+                                <li>
+                                    <a href="product-detail.html" class="dropdown-menu__link--item">Product Detail</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav__link relative">
+                            <a href="contact.html" class="nav__link--item">Contact</a>
+                        </li>
+                    </ul>
+
+                    <div id="bg-sub"
+                        class="fixed top-0 left-0 z-[992] w-full h-screen bg-black bg-opacity-30 opacity-0 invisible transition-all ease-linear duration-300">
+                    </div>
+
+                    <div class="flex items-center basis-[35%] gap-x-4 xl:gap-x-16">
+                        <form action="" id="desktop-search-form" class="default__search-form">
+                            <input 
+                                type="text" name="" id="" placeholder="Search..."
+                                class="w-[100%] xl:w-[256px] border border-[#cccccc] py-[10px] pl-6 pr-[51px] rounded-full focus:ring-1 focus:outline-none">
+                            <svg 
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" 
+                                class="w-5 h-5 absolute top-1/2 right-4 transform -translate-y-1/2 cursor-pointer">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                            </svg>
+                        </form>
+                              
+                        <div class="icons flex items-center gap-x-6 lg:gap-x-3 xl:gap-x-6">
+                            <a href="login.html">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 stroke-[#777777] hover:stroke-black transition-all ease-linear duration-300">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                                </svg>                                  
+                            </a>
+                            <button id="btn__open-cart" class="relative">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 stroke-[#777777] hover:stroke-black transition-all ease-linear duration-300">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+                                </svg> 
+                                <span class="badge absolute -top-2 -right-3 bg-[#3d3d3d] py-0.5 px-1.5 rounded-full text-white text-xs font-sans">6</span>                                 
+                            </button>
+                            <button id="btn__menu-bar" class="ml-4 block lg:hidden">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                                </svg>                                  
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="carts">
+                        <div class="carts-wrapper fixed top-0 right-[-10%] invisible opacity-0 transition-all ease-in-out duration-300 z-[99999] bg-white w-full sm:w-[80%] md:w-[60%] lg:w-[50%] xl:w-[38%] h-screen shadow-xl">
+                            <div class="carts__header flex items-center justify-between py-4 px-6 border-b">
+                                <h3 class="capitalize text-[24px]">Your cart</h3>
+                                <button id="btn__close-cart" type="button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                    </svg>                                      
+                                </button>
+                            </div>
+                            <div class="carts__body px-6 py-8 space-y-8 overflow-y-scroll h-[505px]">
+                                <div class="cart__item flex gap-5">
+                                    <div class="cart-item__img basis-[20%] aspect-8/9">
+                                        <img src="./images/product-3.jpg" alt="product-3.jpg" class="w-full h-full object-contain">
+                                    </div>
+                                    <div class="cart-item__info basis-[64%] space-y-2">
+                                        <a href="product-detail.html" class="text-[16px] font-semibold pt-1 inline-block">Boy's School Bag</a>
+                                        <p class="text-[16px text-[#525050]]">$ 25.00 USD</p>
+                                        <button type="button" class="pt-2 text-[16px] underline underline-offset-2">Remove</button>
+                                    </div>
+                                    <div class="cart-item__qty basis-[16%]">
+                                        <input type="number" name="qty" id="qty" value="1"
+                                        class="w-full border-2 bg-primary--color__bg rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:border-none">
+                                    </div>
+                                </div>
+                                <div class="cart__item flex gap-5">
+                                    <div class="cart-item__img basis-[20%] aspect-8/9">
+                                        <img src="./images/product-2.jpg" alt="product-2.jpg" class="w-full h-full object-contain">
+                                    </div>
+                                    <div class="cart-item__info basis-[64%] space-y-2">
+                                        <a href="product-detail.html" class="text-[16px] font-semibold pt-1 inline-block">Men's Denim jean</a>
+                                        <p class="text-[16px text-[#525050]]">$ 55.00 USD</p>
+                                        <button type="button" class="pt-2 text-[16px] underline underline-offset-2">Remove</button>
+                                    </div>
+                                    <div class="cart-item__qty basis-[16%]">
+                                        <input type="number" name="qty" id="qty" value="2"
+                                        class="w-full border-2 bg-primary--color__bg rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:border-none">
+                                    </div>
+                                </div>
+                                <div class="cart__item flex gap-5">
+                                    <div class="cart-item__img basis-[20%] aspect-8/9">
+                                        <img src="./images/product-4.jpg" alt="product-4.jpg" class="w-full h-full object-contain">
+                                    </div>
+                                    <div class="cart-item__info basis-[64%] space-y-2">
+                                        <a href="product-detail.html" class="text-[16px] font-semibold pt-1 inline-block">Girl Full Sleeve t-Shirt</a>
+                                        <p class="text-[16px text-[#525050]]">$ 35.00 USD</p>
+                                        <button type="button" class="pt-2 text-[16px] underline underline-offset-2">Remove</button>
+                                    </div>
+                                    <div class="cart-item__qty basis-[16%]">
+                                        <input type="number" name="qty" id="qty" value="3"
+                                        class="w-full border-2 bg-primary--color__bg rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:border-none">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carts__footer bg-white py-5 px-7 border-t">
+                                <div class="flex items-center justify-between mb-4">
+                                    <p class="text-[16px] text-[#525050]">Subtotal</p>
+                                    <p class="text-[16px] text-[#525050] font-extrabold">$ 115.00 USD</p>
+                                </div>
+                                <button type="button" class="btn w-full bg-[#393e46] text-[18px] font-semibold] text-white rounded py-3.5 px-8 capitalize transition-all ease-in-out duration-300 hover:bg-black">
+                                    Continue to Checkout
+                                </button>
+                            </div>
+                        </div>
+                        <div class="cart-bg fixed top-0 left-0 invisible opacity-0 transition-all ease-in-out duration-300 z-[99999] w-0 sm:w-[20%] md:w-[40%] lg:w-[50%] xl:w-[62%] h-screen bg-black bg-opacity-80"></div>
+                    </div>
+                </nav>
+            </header>
+            <!--  End header  -->
+
+            <main class="relative">
+                <section class="main__wrapper">
+                    <article class="slider swiper pt-8 min-h-screen bg-primary--color__bg">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide slide-item">
+                                <div class="basis-full pt-20 xs:basis-[50%] xl:basis-[40%]">
+                                    <p class="text-primary--color__text font-semibold uppercase text-sm animate-fadeUp">TOP TRENDING 2023</p>
+                                    <h1 class="heading__1">SUMMER '23 COLLECTIONS</h1>
+                                    <a href="shop.html" class="btn btn--primary animate-fadeUp animation-delay-400">
+                                        DISCOVER MORE
+                                    </a>
+                                </div>
+                                <div
+                                    class="pr-0 sm:pr-12 relative basis-full xs:basis-[45%] xl:basis-[38%] w-full aspect-4/5">
+                                    <img src="./images/slider-img-2.png" alt="Slider 1 Img"
+                                        class="absolute top-9 right-0 z-20 animate-zoomIn animation-delay-400">
+                                </div>
+                            </div>
+                            <div class="swiper-slide slide-item">
+                                <div class="basis-full pt-20 xs:basis-[50%] xl:basis-[40%]">
+                                    <p class="text-primary--color__text font-semibold uppercase text-sm animate-fadeUp">TOP TRENDING 2023</p>
+                                    <h1 class="heading__1">SUMMER '23 COLLECTIONS</h1>
+                                    <a href="shop.html" class="btn btn--primary animate-fadeUp animation-delay-400">
+                                        DISCOVER MORE
+                                    </a>
+                                </div>
+                                <div
+                                    class="pr-0 sm:pr-12 relative basis-full xs:basis-[45%] xl:basis-[38%] w-full aspect-4/5">
+                                    <img src="./images/slider-img-2.png" alt="Slider 2 Img"
+                                        class="absolute top-9 right-0 z-20 animate-zoomIn animation-delay-400">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-pagination"></div>
+                    </article> <!--  End section slider  -->
+
+                    <article class="banner">
+                        <div class="banner-wrapper">
+                            <div class="col-span-1 relative">
+                                <div class="aspect-w-11 aspect-h-8">
+                                    <img src="./images/banner-1.jpg" alt="Banner 1 Image" class="w-full h-full object-cover">
+                                </div>
+                                <div class="banner-content absolute top-1/2 left-0 right-0 transform -translate-y-1/2 pl-[5%] md:pl-[6%] lg:pl-[8%] xl:pl-[11%]">
+                                    <h4 class="text-[28px] sm:text-[24px] md:text-[26px] xl:text-[36px] capitalize max-w-[142px] mb-1.5 md:mb-3">Fashion Bag</h4>
+                                    <a href="shop.html" class="btn btn--discover-more">DISCOVER MORE</a>
+                                </div>
+                            </div>
+                            <div class="col-span-1 relative">
+                                <div class="aspect-w-11 aspect-h-8">
+                                    <img src="./images/banner-2.jpg" alt="Banner 2 Image" class="w-full h-full object-cover">
+                                </div>
+                                <div class="banner-content absolute top-1/2 left-0 right-0 transform -translate-y-1/2 pl-[5%] md:pl-[6%] lg:pl-[8%] xl:pl-[11%]">
+                                    <h4 class="text-[28px] sm:text-[24px] md:text-[26px] xl:text-[36px] capitalize max-w-[142px] mb-1.5 md:mb-3">Fashion Heels</h4>
+                                    <a href="shop.html" class="btn btn--discover-more">DISCOVER MORE</a>
+                                </div>
+                            </div>
+                            <div class="col-span-1 relative">
+                                <div class="aspect-w-11 aspect-h-8">
+                                    <img src="./images/banner-3.jpg" alt="Banner 3 Image" class="w-full h-full object-cover">
+                                </div>
+                                <div class="banner-content absolute top-1/2 left-0 right-0 transform -translate-y-1/2 pl-[5%] md:pl-[6%] lg:pl-[8%] xl:pl-[11%]">
+                                    <h4 class="text-[28px] sm:text-[24px] md:text-[26px] xl:text-[36px] capitalize max-w-[142px] mb-1.5 md:mb-3">Fashion Watches</h4>
+                                    <a href="shop.html" class="btn btn--discover-more">DISCOVER MORE</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article> <!--  End section banner  -->
+
+                    <article class="products my-16 md:my-20 lg:my-[100px] xl:my-[125px]">
+                        <div class="products-wrapper w-full">
+                            <div class="flex flex-col lg:flex-row items-end justify-between mb-12 space-y-9 lg:space-y-0">
+                                <div class="w-full text-center lg:text-left xl:basis-[30%]">
+                                    <h2 class="text-[34px] md:text-[42px] xl:text-[48px] tracking-wider">New Arrival</h2>
+                                    <p class="text-[#393e46] text-[16px] mt-1.5">Discover Our New Summer Big Collection.</p>
+                                </div>
+                                <div id="filter-btn-product-2" class="w-full xl:basis-[60%] flex flex-wrap lg:flex-nowrap items-center justify-center lg:justify-end gap-4 lg:gap-5 xl:gap-8 text-[16px] text-[#9e9e9e] font-semibold">
+                                    <button type="button" data-filter="all" class="btn--filter-product-category btn-clicked">All Products</button>
+                                    <button type="button" data-filter="clothing" class="btn--filter-product-category">Clothing</button>
+                                    <button type="button" data-filter="bags" class="btn--filter-product-category">Bags</button>
+                                    <button type="button" data-filter="shoes" class="btn--filter-product-category">Shoes</button>
+                                    <button type="button" data-filter="wallets" class="btn--filter-product-category">Wallets & Cases</button>
+                                </div>
+                            </div>
+                            <div class="product-list-2 grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-x-3 md:gap-x-4 xl:gap-x-7 gap-y-9 md:gap-y-14">
+                                <div data-item="wallets" class="product-item col-span-1 group">
+                                    <div class="relative w-full">
+                                        <a href="product-detail.html" class="relative overflow-hidden inline-block w-full aspect-9/10">
+                                            <img src="./images/product-7.jpg" alt="product-7 img" class="w-full h-full object-cover transition-all ease-linear duration-300 transform rounded group-hover:scale-[1.15]">
+                                        </a>
+                                        <span class="absolute top-3 lg:top-5 left-3 lg:left-5 z-20 bg-gray-900 py-1.5 text-[14px] lg:text-[16px] px-3 rounded text-white">Sale</span>
+                                        <div class="absolute bottom-[-5%] left-0 right-0 px-6 transition-all ease-linear duration-300 opacity-0 group-hover:opacity-100 group-hover:bottom-5">
+                                            <a href="product-detail.html" class="block w-full text-center bg-white rounded py-4 capitalize tracking-widest transition-all ease-in-out duration-300 shadow-md hover:bg-gray-950 hover:text-white">View product</a>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col items-center lg:items-start gap-y-1 lg:gap-y-0 py-4 px-4 lg:py-5 lg:px-5 space-y-1 xl:space-y-3 shadow-lg">
+                                        <a href="product-detail.html" class="capitalize text-[#888] text-[16px] lg:text-[18px] group-hover:text-black transition-all ease-linear duration-300">Men's Lather Belt</a>
+                                        <div class="flex flex-col items-center text-[14px] space-x-1.5 h-[44px] md:text-[15px] md:space-x-0 lg:flex-row lg:text-[18px] lg:space-x-3 lg:h-min">
+                                            <span class="font-semibold">$ 65.00 USD</span>
+                                            <span class="line-through text-[14px] text-[#888]">$ 85.00 USD</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-item="bags" class="product-item col-span-1 group">
+                                    <div class="relative w-full">
+                                        <a href="product-detail.html" class="relative overflow-hidden inline-block w-full aspect-9/10">
+                                            <img src="./images/product-3.jpg" alt="product-3 img" class="w-full h-full object-cover transition-all ease-linear duration-300 transform rounded group-hover:scale-[1.15]">
+                                        </a>
+                                        <div class="absolute bottom-[-5%] left-0 right-0 px-6 transition-all ease-linear duration-300 opacity-0 group-hover:opacity-100 group-hover:bottom-5">
+                                            <a href="product-detail.html" class="block w-full text-center bg-white rounded py-4 capitalize tracking-widest transition-all ease-in-out duration-300 shadow-md hover:bg-gray-950 hover:text-white">View product</a>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col items-center lg:items-start gap-y-1 lg:gap-y-0 py-4 px-4 lg:py-5 lg:px-5 space-y-1 xl:space-y-3 shadow-lg">
+                                        <a href="product-detail.html" class="capitalize text-[#888] text-[16px] lg:text-[18px] group-hover:text-black transition-all ease-linear duration-300">Men's Lather Belt</a>
+                                        <div class="flex flex-col items-center text-[14px] space-x-1.5 h-[44px] md:text-[15px] md:space-x-0 lg:flex-row lg:text-[18px] lg:space-x-3 lg:h-min">
+                                            <span class="font-semibold">$ 25.00 USD</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-item="clothing" class="product-item col-span-1 group">
+                                    <div class="relative w-full">
+                                        <a href="product-detail.html" class="relative overflow-hidden inline-block w-full aspect-9/10">
+                                            <img src="./images/product-1.jpg" alt="product-1 img" class="w-full h-full object-cover transition-all ease-linear duration-300 transform rounded group-hover:scale-[1.15]">
+                                        </a>
+                                        <span class="absolute top-3 lg:top-5 left-3 lg:left-5 z-20 bg-gray-900 py-1.5 text-[14px] lg:text-[16px] px-3 rounded text-white">Sale</span>
+                                        <div class="absolute bottom-[-5%] left-0 right-0 px-6 transition-all ease-linear duration-300 opacity-0 group-hover:opacity-100 group-hover:bottom-5">
+                                            <a href="product-detail.html" class="block w-full text-center bg-white rounded py-4 capitalize tracking-widest transition-all ease-in-out duration-300 shadow-md hover:bg-gray-950 hover:text-white">View product</a>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col items-center lg:items-start gap-y-1 lg:gap-y-0 py-4 px-4 lg:py-5 lg:px-5 space-y-1 xl:space-y-3 shadow-lg">
+                                        <a href="product-detail.html" class="capitalize text-[#888] text-[16px] lg:text-[18px] group-hover:text-black transition-all ease-linear duration-300">Men's Lather Belt</a>
+                                        <div class="flex flex-col items-center text-[14px] space-x-1.5 h-[44px] md:text-[15px] md:space-x-0 lg:flex-row lg:text-[18px] lg:space-x-3 lg:h-min">
+                                            <span class="font-semibold">$ 30.00 USD</span>
+                                            <span class="line-through text-[14px] text-[#888]">$ 55.00 USD</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-item="clothing" class="product-item col-span-1 group">
+                                    <div class="relative w-full">
+                                        <a href="product-detail.html" class="relative overflow-hidden inline-block w-full aspect-9/10">
+                                            <img src="./images/product-2.jpg" alt="product-2 img" class="w-full h-full object-cover transition-all ease-linear duration-300 transform rounded group-hover:scale-[1.15]">
+                                        </a>
+                                        <span class="absolute top-3 lg:top-5 left-3 lg:left-5 z-20 bg-gray-900 py-1.5 text-[14px] lg:text-[16px] px-3 rounded text-white">Sale</span>
+                                        <div class="absolute bottom-[-5%] left-0 right-0 px-6 transition-all ease-linear duration-300 opacity-0 group-hover:opacity-100 group-hover:bottom-5">
+                                            <a href="product-detail.html" class="block w-full text-center bg-white rounded py-4 capitalize tracking-widest transition-all ease-in-out duration-300 shadow-md hover:bg-gray-950 hover:text-white">View product</a>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col items-center lg:items-start gap-y-1 lg:gap-y-0 py-4 px-4 lg:py-5 lg:px-5 space-y-1 xl:space-y-3 shadow-lg">
+                                        <a href="product-detail.html" class="capitalize text-[#888] text-[16px] lg:text-[18px] group-hover:text-black transition-all ease-linear duration-300">Men's Lather Belt</a>
+                                        <div class="flex flex-col items-center text-[14px] space-x-1.5 h-[44px] md:text-[15px] md:space-x-0 lg:flex-row lg:text-[18px] lg:space-x-3 lg:h-min">
+                                            <span class="font-semibold">$ 70.00 USD</span>
+                                            <span class="line-through text-[14px] text-[#888]">$ 95.00 USD</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-item="wallets" class="product-item col-span-1 group">
+                                    <div class="relative w-full">
+                                        <a href="product-detail.html" class="relative overflow-hidden inline-block w-full aspect-9/10">
+                                            <img src="./images/product-6.jpg" alt="product-6 img" class="w-full h-full object-cover transition-all ease-linear duration-300 transform rounded group-hover:scale-[1.15]">
+                                        </a>
+                                        <div class="absolute bottom-[-5%] left-0 right-0 px-6 transition-all ease-linear duration-300 opacity-0 group-hover:opacity-100 group-hover:bottom-5">
+                                            <a href="product-detail.html" class="block w-full text-center bg-white rounded py-4 capitalize tracking-widest transition-all ease-in-out duration-300 shadow-md hover:bg-gray-950 hover:text-white">View product</a>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col items-center lg:items-start gap-y-1 lg:gap-y-0 py-4 px-4 lg:py-5 lg:px-5 space-y-1 xl:space-y-3 shadow-lg">
+                                        <a href="product-detail.html" class="capitalize text-[#888] text-[16px] lg:text-[18px] group-hover:text-black transition-all ease-linear duration-300">Men's Lather Belt</a>
+                                        <div class="flex flex-col items-center text-[14px] space-x-1.5 h-[44px] md:text-[15px] md:space-x-0 lg:flex-row lg:text-[18px] lg:space-x-3 lg:h-min">
+                                            <span class="font-semibold">$ 7.00 USD</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-item="shoes" class="product-item col-span-1 group">
+                                    <div class="relative w-full">
+                                        <a href="product-detail.html" class="relative overflow-hidden inline-block w-full aspect-9/10">
+                                            <img src="./images/product-8.jpg" alt="product-8 img" class="w-full h-full object-cover transition-all ease-linear duration-300 transform rounded group-hover:scale-[1.15]">
+                                        </a>
+                                        <span class="absolute top-3 lg:top-5 left-3 lg:left-5 z-20 bg-gray-900 py-1.5 text-[14px] lg:text-[16px] px-3 rounded text-white">Sale</span>
+                                        <div class="absolute bottom-[-5%] left-0 right-0 px-6 transition-all ease-linear duration-300 opacity-0 group-hover:opacity-100 group-hover:bottom-5">
+                                            <a href="product-detail.html" class="block w-full text-center bg-white rounded py-4 capitalize tracking-widest transition-all ease-in-out duration-300 shadow-md hover:bg-gray-950 hover:text-white">View product</a>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col items-center lg:items-start gap-y-1 lg:gap-y-0 py-4 px-4 lg:py-5 lg:px-5 space-y-1 xl:space-y-3 shadow-lg">
+                                        <a href="product-detail.html" class="capitalize text-[#888] text-[16px] lg:text-[18px] group-hover:text-black transition-all ease-linear duration-300">Men's Lather Belt</a>
+                                        <div class="flex flex-col items-center text-[14px] space-x-1.5 h-[44px] md:text-[15px] md:space-x-0 lg:flex-row lg:text-[18px] lg:space-x-3 lg:h-min">
+                                            <span class="font-semibold">$ 89.000 USD</span>
+                                            <span class="line-through text-[14px] text-[#888]">$ 149.000 USD</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-item="clothing" class="product-item col-span-1 group">
+                                    <div class="relative w-full">
+                                        <a href="product-detail.html" class="relative overflow-hidden inline-block w-full aspect-9/10">
+                                            <img src="./images/product-4.jpg" alt="product-4 img" class="w-full h-full object-cover transition-all ease-linear duration-300 transform rounded group-hover:scale-[1.15]">
+                                        </a>
+                                        <div class="absolute bottom-[-5%] left-0 right-0 px-6 transition-all ease-linear duration-300 opacity-0 group-hover:opacity-100 group-hover:bottom-5">
+                                            <a href="product-detail.html" class="block w-full text-center bg-white rounded py-4 capitalize tracking-widest transition-all ease-in-out duration-300 shadow-md hover:bg-gray-950 hover:text-white">View product</a>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col items-center lg:items-start gap-y-1 lg:gap-y-0 py-4 px-4 lg:py-5 lg:px-5 space-y-1 xl:space-y-3 shadow-lg">
+                                        <a href="product-detail.html" class="capitalize text-[#888] text-[16px] lg:text-[18px] group-hover:text-black transition-all ease-linear duration-300">Men's Lather Belt</a>
+                                        <div class="flex flex-col items-center text-[14px] space-x-1.5 h-[44px] md:text-[15px] md:space-x-0 lg:flex-row lg:text-[18px] lg:space-x-3 lg:h-min">
+                                            <span class="font-semibold">$ 32.00 USD</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-item="clothing" class="product-item col-span-1 group">
+                                    <div class="relative w-full">
+                                        <a href="product-detail.html" class="relative overflow-hidden inline-block w-full aspect-9/10">
+                                            <img src="./images/product-5.jpg" alt="product-5 img" class="w-full h-full object-cover transition-all ease-linear duration-300 transform rounded group-hover:scale-[1.15]">
+                                        </a>
+                                        <div class="absolute bottom-[-5%] left-0 right-0 px-6 transition-all ease-linear duration-300 opacity-0 group-hover:opacity-100 group-hover:bottom-5">
+                                            <a href="product-detail.html" class="block w-full text-center bg-white rounded py-4 capitalize tracking-widest transition-all ease-in-out duration-300 shadow-md hover:bg-gray-950 hover:text-white">View product</a>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col items-center lg:items-start gap-y-1 lg:gap-y-0 py-4 px-4 lg:py-5 lg:px-5 space-y-1 xl:space-y-3 shadow-lg">
+                                        <a href="product-detail.html" class="capitalize text-[#888] text-[16px] lg:text-[18px] group-hover:text-black transition-all ease-linear duration-300">Men's Lather Belt</a>
+                                        <div class="flex flex-col items-center text-[14px] space-x-1.5 h-[44px] md:text-[15px] md:space-x-0 lg:flex-row lg:text-[18px] lg:space-x-3 lg:h-min">
+                                            <span class="font-semibold">$ 37.00 USD</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>  <!--  End section products  -->
+
+                    <article class="banner-2 relative w-[100vw] left-[calc(-50vw_+_50%)] bg-primary--color__bg h-auto lg:h-[380px] xl:h-[475px] px-5 xs:px-8 sm:px-12 lg:px-20 xl:px-[13rem] ">
+                        <div class="banner-2__wrapper flex flex-col items-center justify-center h-full gap-10 lg:gap-12 xl:gap-16 md:flex-row">
+                            <div class="banner__img w-full basis-full lg:basis-[50%] h-full">
+                                <img src="./images/full-width-banner-image.png" alt="full-width-banner-image" class="w-full h-full">
+                            </div>
+                            <div class="banner__content w-full basis-full lg:basis-[50%] pb-14 space-y-3 md:pb-0 md:space-y-3 xl:space-y-5">
+                                <span class="bg-primary--color__text text-white text-[13px] font-semibold font-Poppins py-2 px-3 rounded">Save 50%</span>
+                                <p class="text-[16px] lg:text-[18px] text-[#959292]">Deal of the Day</p>
+                                <h2 class="text-[28px] xl:text-[40px] leading-9 text-black tracking-wider font-semibold capitalize">Qlonil Women's Hat</h2>
+                                <div class="mt-2.5 text-[18px] lg:text-[20px] space-x-5">
+                                    <span class="text-black">$39.90</span>
+                                    <span class="text-gray-500 line-through italic">$79.90</span>
+                                </div>
+                                <a href="#" class="btn btn--shop-now text-[14px] font-medium text-black !mt-4 lg:!mt-5">Shop now</a>
+                            </div>
+                        </div>
+                    </article> <!--  End section banner  -->
+
+                    <article class="testimonials my-[60px] md:my-[80px] lg:my-[100px] xl:my-32">
+                        <div class="swiper w-full testimonials-slider">
+                            <div class="swiper-wrapper testimonials-wrapper">
+                                <div class="swiper-slide text-center space-y-8 px-3 sm:px-6 md:px-12 lg:px-[7rem] xl:[10rem]">
+                                    <div class="testimonials-icon flex justify-center">
+                                        <img src="./images/icons/quote-icon.svg" alt="quote-icon svg" class="w-[51px] h-[41px] lg:w-[59px] lg:h-[50px]">
+                                    </div>
+                                    <div class="testimonials-content space-y-6 font-Poppins">
+                                        <p class="text-[15px] lg:text-[16px] leading-[2.25rem] capitalize text-[#838383] line-clamp-6 lg:line-clamp-5">
+                                            It Is A Long Established Fact That A Reader Will Be Distracted By The Readable Content Of A Page When Looking At Its Layout. 
+                                            The Point Of Using Lorem Ipsum Is That It Has A More-Or-Less Normal Distribution Of Letters, As Opposed To Using 'Content Here,
+                                             Content Here', Making It Look Like Readable English. 
+                                            Many Desktop Publishing Packages And Web Page Editors Now Use Lorem Ipsum As Their Default Model Text.
+                                        </p>
+                                        <blockquote class="author space-y-3">
+                                            <p class="text-[18px] lg:text-[20px] text-[#333] font-semibold italic">Sander van Velde</p>
+                                            <p class="text-[14px] lg:text-[16px] text-[#838383]">CEO of Qlonil</p>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide text-center space-y-8 px-3 sm:px-6 md:px-12 lg:px-[7rem] xl:[10rem]">
+                                    <div class="testimonials-icon flex justify-center">
+                                        <img src="./images/icons/quote-icon.svg" alt="quote-icon svg" class="w-[51px] h-[41px] lg:w-[59px] lg:h-[50px]">
+                                    </div>
+                                    <div class="testimonials-content space-y-6 font-Poppins">
+                                        <p class="text-[16px] leading-[2.25rem] capitalize text-[#838383] line-clamp-6 lg:line-clamp-5">
+                                            It Is A Long Established Fact That A Reader Will Be Distracted By The Readable Content Of A Page When Looking At Its Layout. 
+                                            The Point Of Using Lorem Ipsum Is That It Has A More-Or-Less Normal Distribution Of Letters, As Opposed To Using 'Content Here,
+                                             Content Here', Making It Look Like Readable English. Many Desktop Publishing Packages And Web Page Editors Now Use Lorem Ipsum As 
+                                             Their Default Model Text.
+                                        </p>
+                                        <blockquote class="author space-y-3">
+                                            <p class="text-[20px] text-[#333] font-semibold italic">John Joe</p>
+                                            <p class="text-[16px] text-[#838383]">Designer</p>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide text-center space-y-8 px-3 sm:px-6 md:px-12 lg:px-[7rem] xl:[10rem]">
+                                    <div class="testimonials-icon flex justify-center">
+                                        <img src="./images/icons/quote-icon.svg" alt="quote-icon svg" class="w-[51px] h-[41px] lg:w-[59px] lg:h-[50px]">
+                                    </div>
+                                    <div class="testimonials-content space-y-6 font-Poppins">
+                                        <p class="text-[16px] leading-[2.25rem] capitalize text-[#838383] line-clamp-6 lg:line-clamp-5">
+                                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas est numquam asperiores suscipit, autem ullam sunt corporis
+                                             quo cupiditate, facilis nam recusandae praesentium. Totam cum repellendus maiores eligendi aliquid laborum iure. In!
+                                        </p>
+                                        <blockquote class="author space-y-3">
+                                            <p class="text-[20px] text-[#333] font-semibold italic">Henrry Max</p>
+                                            <p class="text-[16px] text-[#838383]">Manager Program</p>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                        </div>
+                    </article> <!--  End section testimonials  -->
+
+                    <article class="brands mt-6  mb-[60px] md:mb-[80px] lg:mb-[100px] xl:mb-32">
+                        <div class="brands-slider swiper">
+                            <div class="brands-wrapper swiper-wrapper flex items-center">
+                                <div class="swiper-slide">
+                                    <img src="./images/brands/brand-logo-1.png" alt="brand-logo-1" class="opacity-60 cursor-pointer transition-all ease-linear duration-300 hover:opacity-100">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./images/brands/brand-logo-2.png" alt="brand-logo-2" class="opacity-60 cursor-pointer transition-all ease-linear duration-300 hover:opacity-100">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./images/brands/brand-logo-3.png" alt="brand-logo-3" class="opacity-60 cursor-pointer transition-all ease-linear duration-300 hover:opacity-100">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./images/brands/brand-logo-4.png" alt="brand-logo-4" class="opacity-60 cursor-pointer transition-all ease-linear duration-300 hover:opacity-100">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./images/brands/brand-logo-5.png" alt="brand-logo-5" class="opacity-60 cursor-pointer transition-all ease-linear duration-300 hover:opacity-100">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./images/brands/brand-logo-1.png" alt="brand-logo-1" class="opacity-60 cursor-pointer transition-all ease-linear duration-300 hover:opacity-100">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./images/brands/brand-logo-2.png" alt="brand-logo-2" class="opacity-60 cursor-pointer transition-all ease-linear duration-300 hover:opacity-100">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./images/brands/brand-logo-3.png" alt="brand-logo-3" class="opacity-60 cursor-pointer transition-all ease-linear duration-300 hover:opacity-100">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./images/brands/brand-logo-4.png" alt="brand-logo-4" class="opacity-60 cursor-pointer transition-all ease-linear duration-300 hover:opacity-100">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./images/brands/brand-logo-5.png" alt="brand-logo-5" class="opacity-60 cursor-pointer transition-all ease-linear duration-300 hover:opacity-100">
+                                </div>
+                            </div>
+                        </div>
+                    </article> <!--  End section brands  -->
+                </section>
+            </main>
+            <!--  End main-wrapper  -->
+
+            <footer class="bg-primary--color__bg mt-20 md:mt-28 lg:mt-36 py-20 md:py-24">
+                <div class="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-11 gap-y-5 xs:gap-y-8">
+                    <div class="col-span-1">
+                        <a href="index.html" class="mb-4 inline-block">
+                            <img src="./images/logo-shop.png" alt="Logo Image" class="w-[80px] h-[34px] object-cover">
+                        </a>
+                        <div class="content max-w-[85%] text-[16px] text-[#777576] leading-8">
+                            © 21/04/2023 design and developed by
+                            <a href="#"
+                                class="text-primary--color__text capitalize italic hover:border-b-2 hover:border-primary--color__text">nam2905.</a>
+                            Powered by
+                            <a href="https://qlonil.webflow.io/"
+                                class="text-primary--color__text italic hover:border-b-2 hover:border-primary--color__text">Webflow.</a>
+                        </div>
+                    </div>
+                    <div class="col-span-1 space-y-4">
+                        <div class="address flex gap-x-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-7 h-7">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                            </svg>
+                            <address class="text-base text-[#777576] leading-7">
+                                No. 651 , London Oxford Street, 819 United Kingdom.
+                            </address>
+                        </div>
+                        <div class="mail flex items-center gap-x-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-5 h-5">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                            </svg>
+                            <a href="mailto:thanhnam290596@gmail.com"
+                                class="text-base text-[#777576] leading-7 transition-all ease-linear duration-300 hover:text-primary--color__text">thanhnam290596@gmail.com</a>
+                        </div>
+                        <div class="phone flex items-center gap-x-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-5 h-5">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M14.25 9.75v-4.5m0 4.5h4.5m-4.5 0l6-6m-3 18c-8.284 0-15-6.716-15-15V4.5A2.25 2.25 0 014.5 2.25h1.372c.516 0 .966.351 1.091.852l1.106 4.423c.11.44-.054.902-.417 1.173l-1.293.97a1.062 1.062 0 00-.38 1.21 12.035 12.035 0 007.143 7.143c.441.162.928-.004 1.21-.38l.97-1.293a1.125 1.125 0 011.173-.417l4.423 1.106c.5.125.852.575.852 1.091V19.5a2.25 2.25 0 01-2.25 2.25h-2.25z" />
+                            </svg>
+                            <a href="tel:+0942898298"
+                                class="text-base text-[#777576] leading-7 transition-all ease-linear duration-300 hover:text-primary--color__text">+094.2898.298</a>
+                        </div>
+                    </div>
+                    <div class="col-span-1">
+                        <h4 class="heading__4">Get 32% Off</h4>
+                        <p class="text-[14px] text-[#777576] mb-6">By subscribe to our newsletter</p>
+                        <form action="" class="subscribes relative">
+                            <input type="text" placeholder="Enter your email"
+                                class="w-full py-[12px] pl-5 pr-9 border border-[#cccccc] rounded-full text-[14px] placeholder:text-[14px] placeholder:capitalize focus:outline-none focus:ring-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor"
+                                class="w-5 h-5 absolute top-1/2 right-4 transform -translate-y-1/2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
+                            </svg>
+
+                        </form>
+                    </div>
+                    <div class="col-span-1">
+                        <h4 class="heading__4">FOLLOW US ON</h4>
+                        <ul class="flex items-center gap-x-4">
+                            <li>
+                                <a href="#">
+                                    <img src="./images/icons/facebook-icon.svg"
+                                        class="transition-all ease-linear duration-300 py-1.5 px-2.5 rounded hover:stroke-white hover:bg-[#1877F2]"
+                                        alt="" title="Facebook">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="./images/icons/instagram-icon.svg"
+                                        class="transition-all ease-linear duration-300 py-2 px-2.5 rounded hover:stroke-white hover:bg-[#E4405F]"
+                                        alt="" title="Instagram">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="./images/icons/twitter-icon.svg"
+                                        class="transition-all ease-linear duration-300 py-2 px-2.5 rounded hover:stroke-white hover:bg-[#1DA1F2]"
+                                        alt="" title="Twitter">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="./images/icons/skype-icon.svg"
+                                        class="transition-all ease-linear duration-300 py-1.5 px-2.5 rounded hover:stroke-white hover:bg-[#00AFF0]"
+                                        alt="" title="Skype">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </footer>
+            <!--  End footer  -->
+        </div>
+    </div>
+
+    <!-- Use Swiper link js from CDN -->
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <!-- Custom js link main.js -->
+    <script src="./js/main.js" type="text/javascript"></script>
 </body>
+
 </html>
